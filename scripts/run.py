@@ -22,6 +22,8 @@ from scenes import *
 
 from tqdm import tqdm
 
+pyngp_path = 'pyngp.cpython-37m-x86_64-linux-gnu.so'
+sys.path.append(pyngp_path)
 import pyngp as ngp # noqa
 
 def parse_args():
