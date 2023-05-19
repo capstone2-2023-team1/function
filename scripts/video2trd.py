@@ -18,7 +18,7 @@ def transform(video, mask_id, identifier):
 	videoFps = "2"
 	aabb_scale = "1"
 	# mask_id = "cup" # parameter
-	imageFolderPath = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '\images'
+	imageFolderPath = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/images'
 	# 콜맵으로 영상 -> 이미지, 메타정보
 	start = time.time()
 	colmap2nerf.video2nerf(
@@ -57,7 +57,7 @@ def transform(video, mask_id, identifier):
 	f.write(f"{end - start:.5f} sec - image masking \n")
 
 	folderPath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-	savePath = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '\obj\\' + identifier + '.obj'
+	savePath = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/obj/' + identifier + '.obj'
 	epoch = "3000"
 	marching_cubes_res = "256"
 	# 이미지, 메타정보 -> .obj or .ply
@@ -73,7 +73,7 @@ def transform(video, mask_id, identifier):
 	destination_blob_name = "obj/" + identifier + '.obj'
 
 	client = storage.Client.from_service_account_json(
-		os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '\server\protean-pager-386913-984d487862d2.json')
+		os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/server/protean-pager-386913-984d487862d2.json')
 	bucket = client.get_bucket(bucket_name)
 	blob = bucket.blob(destination_blob_name)
 
