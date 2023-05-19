@@ -5,7 +5,7 @@ import run
 import video2trd
 
 def index(request):
-    return render(request,'main/index.html')
+    return render(request,'nerf/index.html')
 
 # Create your views here.
 def trans(request):
