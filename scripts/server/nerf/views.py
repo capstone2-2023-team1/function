@@ -13,5 +13,6 @@ def trans(request):
 		print(request.GET)
 		video = request.GET.get('video')
 		identifier = request.GET.get('identifier')
-		print(video, identifier)
+		mask_id = request.GET.get('mask_id')
+		print(video, identifier, mask_id)
 		video2trd.transform(video, identifier)
