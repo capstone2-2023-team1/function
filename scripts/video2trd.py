@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from google.cloud import storage
 
 import run
-from . import colmap2nerf
+import colmap2nerf
 
 
 def transform(video, mask_id, identifier):
