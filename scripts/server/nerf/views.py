@@ -1,4 +1,6 @@
 from django.shortcuts import render
+import sys
+sys.path.append("/home/ysndy123/instant-ngp/")
 import scripts.run
 import scripts.video2trd
 
