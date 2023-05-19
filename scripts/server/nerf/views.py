@@ -4,6 +4,8 @@ sys.path.append("/home/ysndy123/instant-ngp/scripts")
 import run
 import video2trd
 
+def index(request):
+    return render(request,'main/index.html')
 
 # Create your views here.
 def trans(request):

@@ -4,5 +4,6 @@ from . import views
 app_name='nerf'
 
 urlpatterns=[
-   path('trans/', views.trans, name='trans'),
+	path('', views.index, name='index'),
+	path('trans/', views.trans, name='trans'),
 ]
