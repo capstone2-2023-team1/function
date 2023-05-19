@@ -18,7 +18,7 @@ def transform(video, mask_id, identifier):
 	videoFps = "2"
 	aabb_scale = "1"
 	# mask_id = "cup" # parameter
-	imageFolderPath = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/images'
+	imageFolderPath = os.path.dirname(os.path.abspath(__file__)) + '/server/images/'
 	# 콜맵으로 영상 -> 이미지, 메타정보
 	start = time.time()
 	colmap2nerf.video2nerf(
