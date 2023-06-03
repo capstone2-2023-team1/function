@@ -61,6 +61,8 @@ def transform(video, mask_id, identifier):
 	epoch = "3000"
 	marching_cubes_res = "256"
 	# 이미지, 메타정보 -> .obj or .ply
+	print(folderPath)
+	print(savePath)
 	run.nerf2trd(["--scene", folderPath, "--save_mesh", savePath, "--train", "--n_steps", epoch, "--marching_cubes_res",
 				  marching_cubes_res])
 	w_end = time.time()
