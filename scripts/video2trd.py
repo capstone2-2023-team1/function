@@ -56,7 +56,7 @@ def transform(video, mask_id, identifier):
 	end = time.time()
 	f.write(f"{end - start:.5f} sec - image masking \n")
 
-	folderPath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+	folderPath = os.path.dirname(os.path.abspath(__file__))+"/server"
 	savePath = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/obj/' + identifier + '.obj'
 	epoch = "3000"
 	marching_cubes_res = "256"
