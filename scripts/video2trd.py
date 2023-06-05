@@ -34,10 +34,10 @@ def transform(video, mask_id, identifier):
 		img = cv2.imread(imageFolderPath + str(k + 1).zfill(4) + ".png")
 		if img is None:
 			break
-		img_mask = cv2.imread(imageFolderPath + "dynamic_mask_" + str(k + 1).zfill(4) + ".png") / 255
+		img_mask = cv2.imread(imageFolderPath + "dynamic_mask_" + str(k + 1).zfill(4) + ".png")
 		if img_mask is None:
 			continue
-		img = img * img_mask
+		img = img * (img_mask/255)
 
 		tempList = [[[0 for col in range(4)] for row in range(len(img[0]))] for depth in range(len(img))]
 
