@@ -10,9 +10,7 @@ def index(request):
 # Create your views here.
 def trans(request):
 	if request.method == 'GET':
-		print(request.GET)
 		video = request.GET.get('video')
 		identifier = request.GET.get('identifier')
 		mask_id = request.GET.get('mask_id')
-		print(video, identifier, mask_id)
-		return video2trd.transform(video, 'bottle', identifier)
+		return video2trd.transform(video, mask_id, identifier)

@@ -13,10 +13,8 @@ import colmap2nerf
 def transform(video, mask_id, identifier):
 	w_start = time.time()
 	f = open("log.txt", 'w')
-	# storageURL = "https://storage.googleapis.com/nerf-video/"
-	# videoName = "WIN_20220711_23_14_54_Pro.mp4" # 여기에 public 주소 되는지 확인하고 parameter로 받기
-	videoFps = "2"
-	aabb_scale = "1"
+	videoFps = "2" # 영상 길이에 맞게
+	aabb_scale = "1" # 사진에서 차지하는 객체의 비율에 맞게
 	# mask_id = "cup" # parameter
 	imageFolderPath = os.path.dirname(os.path.abspath(__file__)) + '/server/images/'
 	# 콜맵으로 영상 -> 이미지, 메타정보
@@ -39,6 +37,7 @@ def transform(video, mask_id, identifier):
 			continue
 		img = img * (img_mask/255)
 
+		"""
 		tempList = [[[0 for col in range(4)] for row in range(len(img[0]))] for depth in range(len(img))]
 
 		for i in range(len(img)):
@@ -48,6 +47,12 @@ def transform(video, mask_id, identifier):
 				tempList[i][j][2] = img[i][j][2]
 				tempList[i][j][3] = 0 if (img[i][j][0] == 0 and img[i][j][1] == 0 and img[i][j][2] == 0) else 255
 		result = np.array(tempList)
+		"""
+		tempList = np.zeros((len(img), len(img[0]), 4), dtype=np.uint8)
+		tempList[:, :, :3] = img[:, :, :3]
+		tempList[:, :, 3] = np.where((img[:, :, 0] == 0) & (img[:, :, 1] == 0) & (img[:, :, 2] == 0), 0, 255)
+		result = tempList.copy()
+
 		if result.sum() != 0:
 			cv2.imwrite(imageFolderPath + str(k + 1).zfill(4) + ".png", result)
 		else:
