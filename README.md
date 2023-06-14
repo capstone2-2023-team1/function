@@ -1,3 +1,16 @@
+### build
+아래 instant-ngp 공식문서 참조, 블로그 참조
+[build_reference][build]
+[build]: https://medium.com/@kumon/instant-nerf-on-google-compute-engine-via-chrome-remote-desktop-eee4fd98df56
+
+### run
+```
+$ cd instant-ngp/scripts/server
+$ python manage.py runserver 0.0.0.0:8000
+```
+
+***
+
 # Instant Neural Graphics Primitives ![](https://github.com/NVlabs/instant-ngp/workflows/CI/badge.svg)
 
 <img src="docs/assets_readme/fox.gif" height="342"/> <img src="docs/assets_readme/robot5.gif" height="342"/>
