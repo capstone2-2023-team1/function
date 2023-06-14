@@ -1,7 +1,6 @@
 ### build
 아래 instant-ngp 공식문서 참조, 블로그 참조
-[build_reference][build]
-[build]: https://medium.com/@kumon/instant-nerf-on-google-compute-engine-via-chrome-remote-desktop-eee4fd98df56
+https://medium.com/@kumon/instant-nerf-on-google-compute-engine-via-chrome-remote-desktop-eee4fd98df56
 
 ### run
 ```
